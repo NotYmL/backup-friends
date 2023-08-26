@@ -1,0 +1,175 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgColor: rgb(51, 49, 49);
+    --boxColor: rgba(0, 0, 0, 0.162);
+}
+
+body {
+    background: var(--bgColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainBox {
+    min-width: 40vh;
+    height: 25%;
+    background: var(--boxColor);
+    border-radius: 7px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 0 0 6px -2px black;
+    border-left: 5px solid red;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.iconBox {
+    width: 20%;
+    height: 30%;
+    background: rgb(255, 97, 39);
+    margin: -7% 0 0 7%;
+    border-radius: 15px;
+    color: rgb(219, 219, 219);
+    display: grid;
+    place-items: center;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.textBox {
+    width: 60%;
+    height: 20%;
+    padding: 0 0 0 3%;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(234, 232, 232);
+}
+
+.uploadBox, .enterBox {
+    width: 100%;
+    height: 30%;
+    padding: 0 0 0 7%;
+    display: flex;
+    align-items: center;
+}
+
+.uploadBox:hover, .enterBox:hover {
+    background: rgba(0, 0, 0, 0.063);
+}
+
+.uploadBoxIcon {
+    height: 90%;
+    width: 20%;
+    background: rgba(0, 0, 0, 0.063);
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    color: white;
+}
+
+.mainBox button {
+    width: 20%;
+    height: 50%;
+    background: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0);
+    color: gray;
+    font-family: arial;
+    font-size: 1.1rem;
+    margin: 0 0 0 3%;
+    user-select: none;
+}
+
+.mainBox button:hover {
+    color: white;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+@media all and (min-width: 1000px){
+    .container {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media all and (min-width: 1500px){
+    .container {
+        grid-template-columns: auto auto auto;
+    }
+}
+img {
+    border-radius: 50%;
+}
+h1, h2 {
+    color: #c2c2c2;
+    font-family: monospace;
+    padding-left: 2vh;
+    text-align: center;
+    margin-bottom: 0;
+}
+.mt-0 {
+    margin-top: 0;
+}
+.border {
+    border-color: rgb(130 130 130);
+    border-style: solid;
+    border-radius: 5px;
+    margin: 5px;
+    max-width: 50vh;
+    background-color: var(--boxColor);;
+}
+.box {
+    display: flex;
+    padding: 12px;
+}
+.img {
+    padding-left: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.send-Button-Wrapper {
+    display: flex;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+.username{
+    margin: 0;
+    padding: 0;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #738ADB;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 6px #999;
+}
+.button:hover {background-color: #667CCD}
+.button:active {
+    background-color: #667CCD;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}

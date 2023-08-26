@@ -8,3 +8,4 @@
 </div>
 
 Tool to backup friends on discord
+big thanks to str for upload file frontend design

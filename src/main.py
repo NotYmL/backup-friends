@@ -1,15 +1,15 @@
-from flask import Flask, send_file, jsonify
+from flask import Flask, Response, render_template
 import requests, json, time
 
 token = input("Acc token: ")
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates")
 
 session = requests.Session()
 
 response = session.get('https://discord.com/api/v9/users/@me/burst-credits')
 
-def sendFr(userID):
+def sendFr(userID: str) -> int:
     res = session.put('https://discord.com/api/v9/users/@me/relationships/'+userID, headers={
         'authority': 'discord.com',
         'Accept': '*/*',
@@ -46,25 +46,18 @@ def sendFr(userID):
 
 @app.route('/')
 def indexpage():
-    return send_file("index.html")
+    return render_template("index.html")
 
 @app.route('/add/<string:userID>', methods=['GET']) # get is faster then post?
-def get_item_by_name(userID):
+def get_user_id(userID):
+    try:
+        int(userID)
+    except:
+        return Response(response="YOU MUST PROVIDE VALID USER ID", stauts=201)
     return str(sendFr(userID))
 
 
-# this whole project should have been made in electron.js
-@app.route('/pfp.webp', methods=['GET'])
-def defPfp():
-    return send_file("../assets/defaultPfp.webp")
 
-@app.route('/style/style.css', methods=['GET'])
-def getStyle():
-    return send_file("style/style.css")
-
-@app.route('/js/main.js', methods=['GET'])
-def getJs():
-    return send_file("js/main.js")
 
 # make back up file
 def makeBackUp():

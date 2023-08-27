@@ -63,9 +63,8 @@ def get_user_id(userID):
 def makeBackUp():
     response=requests.get("https://discord.com/api/v9/users/@me/relationships", headers={'authorization': token})
     
-    file = open("data.json", "a+")
-    file.write(json.dumps(json.loads(response.text), indent=4))
-    file.close()
+    with open("data.json", "a+") as file:
+        file.write(json.dumps(json.loads(response.text), indent=4))
 
 def main():
     if(int(input("1. Make BackUp\n2. Start GUI\ninp: ")) == 1):
